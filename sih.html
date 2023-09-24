@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="sih.css" />
+  </head>
+
+  <script>
+  function handleUpload() {
+    const fileInput = document.getElementById('upload-btn');
+    const analysisResult = document.getElementById('analysis-result');
+    const resultSection = document.getElementById('result-section');
+
+    const file = fileInput.files[0];
+    if (!file) {
+      alert('Please select an audio file.');
+      return;
+    }
+
+    // Simulating sentiment analysis (replace with actual analysis logic)
+    setTimeout(() => {
+      const fakeAnalysisResult = 'Positive sentiment detected.';
+      analysisResult.innerText = fakeAnalysisResult;
+      
+      // Scroll to the results section
+      resultSection.scrollIntoView({ behavior: 'smooth' });
+    }, 3000); // Simulating a delay of 3 seconds for analysis
+
+    analysisResult.innerText = 'Analyzing... Please wait.';
+  }
+  </script>
+  
+  <body>
+    
+      <div class="logo">SENTIMENT ANALYSIS</div>
+    
+    <section class="main">
+      <div class="main-container">
+        <div class="column-left">
+          <h1> Listen, Analyze, Serve: Elevate Customer Conversations with Sentiment Insight</h1>
+          <p>
+           
+          </p>
+          <input type="file" id="upload-btn" accept=".mp3, .wav">
+             <button onclick="handleUpload()" class="cta-button">Upload Audio</button>
+        </div>
+        <div class="column-right">
+          <img
+            src="right3.png"
+            alt="illustration"
+            class="main-image"/>
+        </div>
+      </div>
+    </section>
+    <hr>
+
+<!-- New section for results -->
+    <section id="result-section">
+        <h2>Analysis Results</h2>
+        <p id="analysis-result">No analysis results yet.</p>
+    </section>
+  </body>
+</html>
